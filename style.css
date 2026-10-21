@@ -1,0 +1,2500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+.navbar {
+    width: 100%;
+    padding: 25px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8, 8, 8, 0.75);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #ff3b81;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff3b81;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 7% 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BACKGROUND GLOW */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: #ff3b81;
+    filter: blur(180px);
+    opacity: 0.12;
+    top: 20%;
+    left: 30%;
+    border-radius: 50%;
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.intro {
+    color: #ff3b81;
+    letter-spacing: 5px;
+    font-size: 16px;
+    font-weight: 100;
+    margin-bottom: 15px;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 10vw, 140px);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -6px;
+    animation: fadeUp 1s ease 0.15s both;
+}
+
+.hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+.hero h2 {
+    margin-top: 25px;
+    font-size: 25px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    animation: fadeUp 1s ease 0.3s both;
+}
+
+.hero-text {
+    margin-top: 25px;
+    max-width: 520px;
+    color: #aaaaaa;
+    font-size: 17px;
+    line-height: 1.8;
+    animation: fadeUp 1s ease 0.45s both;
+}
+
+/* BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    animation: fadeUp 1s ease 0.6s both;
+}
+
+.btn {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #ff3b81;
+    color: #ffffff;
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255, 59, 129, 0.35);
+}
+
+.secondary {
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+
+.secondary:hover {
+    border-color: #ff3b81;
+    color: #ff3b81;
+}
+
+/* SKILL LINE */
+
+.skills-line {
+    display: flex;
+    gap: 13px;
+    margin-top: 45px;
+    color: #777777;
+    font-size: 13px;
+    letter-spacing: 2px;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease 0.75s both;
+}
+
+.skills-line span:nth-child(even) {
+    color: #ff3b81;
+}
+
+/* DESIGN CARD */
+
+.hero-visual {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glow-circle {
+    width: 330px;
+    height: 330px;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    position: absolute;
+    animation: rotate 12s linear infinite;
+}
+
+.glow-circle::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #ff3b81;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    box-shadow: 0 0 25px #ff3b81;
+}
+
+.design-card {
+    width: 280px;
+    height: 360px;
+    background: #111111;
+    border: 1px solid #333333;
+    padding: 25px;
+    transform: rotate(-6deg);
+    box-shadow: 25px 25px 80px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.design-card:hover {
+    transform: rotate(0deg) scale(1.04);
+    border-color: #ff3b81;
+}
+
+.card-top,
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    color: #777777;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.card-center {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+}
+
+.card-center span {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: #888888;
+}
+
+.card-center strong {
+    display: block;
+    font-size: 50px;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+.card-bottom {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 100px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .skills-line {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        width: 100%;
+        height: 400px;
+    }
+}
+/* PROJECT LINK */
+
+.project-link {
+    display: inline-block;
+    margin-top: 28px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.project-link:hover {
+    color: #ff3b81;
+    letter-spacing: 3px;
+}
+
+.project-card:hover .project-link {
+    color: #ff3b81;
+}
+/* ABOUT SECTION */
+
+.about {
+    min-height: 80vh;
+    padding: 120px 7%;
+    background: #0d0d0d;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.section-title span {
+    color: #ff3b81;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    letter-spacing: -2px;
+}
+
+.section-title strong {
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-label {
+    color: #ff3b81;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.about-left h3 {
+    font-size: 55px;
+    line-height: 1.05;
+}
+
+.about-left h3 span {
+    color: #ff3b81;
+}
+
+.about-right > p {
+    color: #999999;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about-info {
+    display: flex;
+    gap: 50px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #292929;
+}
+
+.about-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.about-info small {
+    color: #666666;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.about-info strong {
+    font-size: 15px;
+}
+
+/* MOBILE ABOUT */
+
+@media (max-width: 850px) {
+
+    .about {
+        padding: 90px 7%;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-left h3 {
+        font-size: 42px;
+    }
+
+    .section-title h2 {
+        font-size: 35px;
+    }
+
+    .about-info {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+}
+/* ================= SKILLS SECTION ================= */
+
+.skills-section {
+    min-height: 90vh;
+    padding: 120px 7%;
+    background: #080808;
+}
+
+.skills-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    position: relative;
+    padding: 40px;
+    min-height: 280px;
+    background: #101010;
+    border: 1px solid #242424;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #ff3b81;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0;
+    right: -80px;
+    bottom: -80px;
+    transition: 0.5s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff3b81;
+}
+
+.skill-card:hover::before {
+    opacity: 0.18;
+}
+
+.skill-number {
+    color: #ff3b81;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+.skill-card h3 {
+    font-size: 25px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    color: #888888;
+    line-height: 1.7;
+    font-size: 14px;
+    max-width: 450px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.skill-tags span {
+    padding: 7px 12px;
+    border: 1px solid #333333;
+    color: #aaaaaa;
+    font-size: 10px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.skill-tags span:hover {
+    border-color: #ff3b81;
+    color: #ff3b81;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 30px;
+    }
+
+    .skill-card h3 {
+        font-size: 22px;
+    }
+}
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile mockup images */
+.project-card:nth-child(2) .project-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card:nth-child(2) .project-image img {
+    width: auto;
+    height: 96%;
+    max-width: 82%;
+    object-fit: contain;
+    padding: 0;
+}
+/* ================= PROJECTS HORIZONTAL SCROLL ================= */
+
+.projects-grid {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 5px 25px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.projects-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+
+/* ================= PROJECT CARD ================= */
+
+.project-card {
+    flex: 0 0 330px;
+    width: 330px;
+    min-width: 330px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    border-radius: 16px;
+
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+}
+
+
+/* ================= PROJECT IMAGE ================= */
+
+.project-image {
+    width: 100%;
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.project-card .project-image img {
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+    border-radius: 14px;
+}
+
+
+/* ================= PROJECT NUMBER ================= */
+
+.project-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    z-index: 5;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    background: #111111;
+    color: #ffffff;
+
+    padding: 6px 9px;
+    border-radius: 6px;
+}
+
+
+/* ================= PROJECT CONTENT ================= */
+
+.project-info {
+    padding: 18px 5px 5px;
+}
+
+.project-category {
+    margin: 0;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.project-info h3 {
+    margin: 8px 0 10px;
+}
+
+.project-info > p:not(.project-category) {
+    line-height: 1.6;
+    margin: 0 0 15px;
+}
+
+
+/* ================= PROJECT TAGS ================= */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.project-tags span {
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+
+/* ================= PROJECT LINK ================= */
+
+.project-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    align-self: flex-start;
+
+    text-decoration: none;
+}
+
+
+/* ================= MOBILE PROJECTS ================= */
+
+@media (max-width: 700px) {
+
+    .project-card {
+        flex: 0 0 280px;
+        width: 280px;
+        min-width: 280px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-card .project-image img {
+        height: 180px;
+    }
+}/* ================= CERTIFICATES HORIZONTAL SCROLL ================= */
+
+.certificates-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 5px 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.certificates-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.certificates-grid::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+.certificate-card {
+    flex: 0 0 190px;
+    min-width: 190px;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-6px);
+}
+
+.certificate-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    display: block;
+    background: #f5f5f5;
+    border-radius: 12px;
+}
+
+.certificate-info {
+    padding: 8px 4px;
+}
+
+.certificate-info h3 {
+    font-size: 13px;
+    margin: 0;
+}
+
+.certificate-info p {
+    font-size: 11px;
+    margin: 4px 0 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .certificate-card {
+        flex: 0 0 155px;
+        min-width: 155px;
+        height: 200px;
+    }
+
+    .certificate-card img {
+        height: 140px;
+    }
+
+    .certificate-info h3 {
+        font-size: 11px;
+    }
+
+    .certificate-info p {
+        font-size: 10px;
+    }
+}
+/* ================= CERTIFICATE FULL VIEW ================= */
+
+.certificate-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.certificate-modal.active {
+    display: flex;
+}
+
+.certificate-modal img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.certificate-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.certificate-close:hover {
+    transform: scale(1.1);
+}
+/* ================= ACHIEVEMENTS HORIZONTAL SCROLL ================= */
+
+.achievements-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 5px 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.achievements-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.achievement-card {
+    flex: 0 0 190px;
+    min-width: 190px;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-6px);
+}
+
+.achievement-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    display: block;
+    background: #f5f5f5;
+    border-radius: 12px;
+}
+
+.achievement-info {
+    padding: 8px 4px;
+}
+
+.achievement-info h3 {
+    font-size: 13px;
+    margin: 0;
+}
+
+.achievement-info p {
+    font-size: 11px;
+    margin: 4px 0 0;
+}
+
+@media (max-width: 600px) {
+
+    .achievement-card {
+        flex: 0 0 155px;
+        min-width: 155px;
+        height: 200px;
+    }
+
+    .achievement-card img {
+        height: 140px;
+    }
+
+    .achievement-info h3 {
+        font-size: 11px;
+    }
+
+    .achievement-info p {
+        font-size: 10px;
+    }
+}
+/* ================= INTERNSHIPS ================= */
+
+.internships-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.internship-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    background: #f5f5f5;
+    transition: transform 0.3s ease;
+}
+
+.internship-card:hover {
+    transform: translateY(-6px);
+}
+
+.internship-card img {
+    width: 130px;
+    height: 170px;
+    object-fit: contain;
+    background: white;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.internship-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.internship-info h3 {
+    font-size: 17px;
+    margin: 0 0 6px;
+}
+
+.internship-info h4 {
+    font-size: 14px;
+    margin: 0 0 8px;
+}
+
+.internship-date {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.internship-info p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .internships-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-card {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .internship-card img {
+        width: 95px;
+        height: 130px;
+    }
+
+    .internship-info h3 {
+        font-size: 14px;
+    }
+
+    .internship-info h4 {
+        font-size: 12px;
+    }
+
+    .internship-info p {
+        font-size: 11px;
+    }
+}
+/* Internship text visibility */
+
+.internship-card {
+    color: #111;
+}
+
+.internship-info h3,
+.internship-info h4,
+.internship-info p {
+    color: #111;
+}
+
+.internship-date {
+    color: #444 !important;
+}
+/* ================= PROJECTS HORIZONTAL SCROLL ================= */
+
+.projects-grid {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 5px 25px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.projects-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.project-card {
+    flex: 0 0 330px;
+    min-width: 330px;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    border-radius: 14px;
+}
+
+@media (max-width: 700px) {
+
+    .project-card {
+        flex: 0 0 280px;
+        min-width: 280px;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+}
+.achievement-date {
+    color: #111 !important;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+}
+.contact-content {
+    max-width: 700px;
+}
+
+.contact-content p {
+    color: #111;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.contact-links a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+/* ================= PROJECT CONTENT ALIGNMENT ================= */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info {
+    padding: 18px 5px 5px;
+}
+
+.project-info h3 {
+    margin: 8px 0 10px;
+}
+
+.project-info > p:not(.project-category) {
+    line-height: 1.6;
+    margin: 0 0 15px;
+}
+
+.project-category {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.project-tags span {
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    align-self: flex-start;
+    text-decoration: none;
+}
+/* ================= CONTACT LINKS ================= */
+.contact-email {
+    display: inline-block;
+    color: #111 !important;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    border-bottom: 1px solid #111;
+}
+
+.contact-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.contact-links a {
+    display: inline-block;
+    color: #111 !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #111;
+    padding-bottom: 5px;
+    transition: 0.3s ease;
+}
+
+.contact-links a:hover,
+.contact-email:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}
+/* ================= CONTACT VISIBILITY FIX ================= */
+
+.contact-section .contact-content {
+    color: #ffffff;
+}
+
+.contact-section .contact-content p {
+    color: #999999;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.contact-section .contact-email {
+    display: inline-block;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.contact-section .contact-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.contact-section .contact-links a {
+    display: inline-block;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 0px;
+}
+
+.contact-section .contact-links a:hover,
+.contact-section .contact-email:hover {
+    color: #ff3b81 !important;
+    border-color: #ff3b81;
+}
+/* ================= COMMON SECTION ALIGNMENT ================= */
+
+.about-section,
+.skills-section,
+.projects-section,
+.achievements-section,
+.internships-section,
+.contact-section,
+.certificates-section {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Keep all section headings on the same left line */
+
+.about-section .section-title,
+.skills-section .section-title,
+.projects-section .section-title,
+.achievements-section .section-title,
+.internships-section .section-title,
+.contact-section .section-title,
+.certificates-section .section-title {
+    margin-left: 0;
+}
+
+/* Prevent first letter/content from touching the edge */
+
+.about-section .section-title,
+.skills-section .section-title,
+.contact-section .section-title {
+    padding-left: 10px;
+}
+
+/* ================= CONTACT LINKS LEFT TO RIGHT ================= */
+
+.contact-section .contact-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+    width: 100%;
+}
+
+.contact-section .contact-content {
+    padding-left: 10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .about-section,
+    .skills-section,
+    .projects-section,
+    .achievements-section,
+    .internships-section,
+    .contact-section,
+    .certificates-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contact-section .contact-links {
+        gap: 20px;
+    }
+}
+/* ================= FINAL ALIGNMENT FIX ================= */
+
+/* Same left alignment for section headings */
+.about,
+.skills-section,
+.projects-section,
+.contact-section,
+.certificates-section,
+.achievements-section,
+.internships-section {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Keep section title consistently positioned */
+.about .section-title,
+.skills-section .section-title,
+.projects-section .section-title,
+.contact-section .section-title,
+.certificates-section .section-title,
+.achievements-section .section-title,
+.internships-section .section-title {
+    margin-left: 0;
+}
+
+/* Gap below Certificates & Courses heading */
+.certificates-section .section-title {
+    margin-bottom: 35px;
+}
+
+/* Contact links - one horizontal line */
+.contact-section .contact-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+    width: 100%;
+}
+
+/* Keep email separate with proper spacing */
+.contact-section .contact-email {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .about,
+    .skills-section,
+    .projects-section,
+    .contact-section,
+    .certificates-section,
+    .achievements-section,
+    .internships-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .contact-section .contact-links {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
+/* Gap between Certificates heading and certificate items */
+.certificates-section .section-title {
+    margin-bottom: 60px;
+}
+/* Gap between Contact and Certificates sections */
+.contact-section {
+    margin-bottom: 100px;
+}
+/* ================= ACHIEVEMENTS FINAL FIX ================= */
+
+.achievements-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.achievements-section .section-title {
+    margin-bottom: 45px;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+.achievement-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.achievement-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.achievement-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.achievement-info h3 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.achievement-info p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.achievement-date {
+    margin-top: 4px;
+}
+
+
+/* ================= ACHIEVEMENTS MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .achievements-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .achievement-card img {
+        height: 230px;
+    }
+
+}
+/* ================= CONTACT FINAL ================= */
+
+.contact-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-links a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.contact-email {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .contact-links {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+}
+/* ================= HOME HERO VISUAL ================= */
+
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.design-showcase {
+    position: relative;
+    width: 430px;
+    height: 500px;
+    padding: 25px;
+    overflow: hidden;
+
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Top */
+
+.showcase-top {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #aaa;
+}
+
+/* Abstract shapes */
+
+.showcase-shapes {
+    position: absolute;
+    top: 95px;
+    right: -30px;
+
+    width: 280px;
+    height: 280px;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape-one {
+    width: 190px;
+    height: 190px;
+
+    top: 20px;
+    left: 40px;
+
+    background: #fff;
+}
+
+.shape-two {
+    width: 120px;
+    height: 120px;
+
+    top: 110px;
+    left: 5px;
+
+    background: #777;
+}
+
+.shape-three {
+    width: 70px;
+    height: 70px;
+
+    top: 5px;
+    right: 5px;
+
+    background: #333;
+    border: 1px solid #777;
+}
+
+/* Main text */
+
+.showcase-text {
+    position: relative;
+    z-index: 2;
+
+    margin-top: auto;
+    margin-bottom: 55px;
+}
+
+.showcase-text span {
+    display: block;
+
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #aaa;
+
+    margin-bottom: 8px;
+}
+
+.showcase-text strong {
+    display: block;
+
+    font-size: 52px;
+    line-height: 0.95;
+    letter-spacing: -2px;
+
+    color: #fff;
+}
+
+/* Bottom */
+
+.showcase-bottom {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #888;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .design-showcase {
+        width: 100%;
+        max-width: 360px;
+        height: 400px;
+    }
+
+    .showcase-text strong {
+        font-size: 42px;
+    }
+
+}
+/* ================= SYMPOSIUM ================= */
+
+.symposium-section {
+    padding: 80px 0;
+}
+
+.symposium-section .section-title {
+    margin-bottom: 40px;
+}
+
+.symposium-scroll {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
+}
+
+.symposium-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.symposium-card {
+    min-width: 220px;
+    flex: 0 0 220px;
+}
+
+.symposium-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.symposium-card h3 {
+    margin: 14px 0 5px;
+    font-size: 15px;
+}
+
+.symposium-card p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .symposium-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .symposium-card {
+        min-width: 190px;
+        flex-basis: 190px;
+    }
+
+    .symposium-card img {
+        height: 240px;
+    }
+
+}
+/* ================= MERIT CERTIFICATES ================= */
+
+.merit-section {
+    padding: 80px 0;
+}
+
+.merit-section .section-title {
+    margin-bottom: 40px;
+}
+
+.merit-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
+}
+
+.merit-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.merit-card {
+    min-width: 180px;
+    flex: 0 0 180px;
+}
+
+.merit-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .merit-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .merit-card {
+        min-width: 160px;
+        flex-basis: 160px;
+    }
+
+    .merit-card img {
+        height: 210px;
+    }
+
+}
+/* ================= ACHIEVEMENT PROOFS ================= */
+
+.achievement-proofs {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    margin-top: 30px;
+    padding-bottom: 15px;
+}
+
+.achievement-proof {
+    flex: 0 0 180px;
+}
+
+.achievement-proof img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .achievement-proof {
+        flex-basis: 160px;
+    }
+
+    .achievement-proof img {
+        height: 200px;
+    }
+
+}
+/* PROJECT IMAGES - SAME SIZE */
+
+.project-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+/* SALON PROJECT IMAGES - SAME SIZE */
+
+.project-card:nth-child(1) .project-image img,
+.project-card:nth-child(2) .project-image img,
+.project-card:nth-child(3) .project-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+.project-link {
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* =====================================================
+   FINAL PORTFOLIO SPACING + ALIGNMENT FIX
+   ===================================================== */
+
+/* ---------- COMMON SECTION ALIGNMENT ---------- */
+
+.about,
+.skills-section,
+.projects-section,
+.contact-section,
+.certificates-section,
+.achievements-section,
+.internships-section,
+.symposium-section,
+.merit-section {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
+/* Keep every section title on the same left line */
+
+.about .section-title,
+.skills-section .section-title,
+.projects-section .section-title,
+.contact-section .section-title,
+.certificates-section .section-title,
+.achievements-section .section-title,
+.internships-section .section-title,
+.symposium-section .section-title,
+.merit-section .section-title {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+/* ---------- SECTION GAP ---------- */
+
+/* Home → About */
+
+.hero {
+    padding-bottom: 65px;
+    padding-top: 65px;
+}
+
+/* About → Skills */
+
+.about {
+    padding-bottom: 35px;
+}
+
+.skills-section {
+    padding-top: 30px;
+}
+
+
+/* ---------- ACHIEVEMENTS → INTERNSHIPS ---------- */
+
+.achievements-section {
+    padding-bottom:0px;
+}
+
+.internships-section {
+    padding-top: 45px;
+}
+
+
+/* ---------- SYMPOSIUM → MERIT ---------- */
+
+.symposium-section {
+    padding-bottom: 35px;
+}
+
+.merit-section {
+    padding-top: 35px;
+}
+
+
+/* ---------- SYMPOSIUM IMAGES ---------- */
+
+.symposium-card img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ---------- MERIT IMAGES ---------- */
+
+.merit-card img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+    .about,
+    .skills-section,
+    .projects-section,
+    .contact-section,
+    .certificates-section,
+    .achievements-section,
+    .internships-section,
+    .symposium-section,
+    .merit-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .hero {
+        padding-bottom: 35px;
+    }
+
+    .about {
+        padding-bottom: 35px;
+    }
+
+    .skills-section {
+        padding-top: 35px;
+    }
+
+    .achievements-section {
+        padding-bottom: 30px;
+    }
+
+    .internships-section {
+        padding-top: 30px;
+    }
+
+    .symposium-section {
+        padding-bottom: 25px;
+    }
+
+    .merit-section {
+        padding-top: 25px;
+    }
+
+    .symposium-card img,
+    .merit-card img {
+        width: 160px;
+        height: 200px;
+    }
+}
+/* ================= FINAL SPACING TWEAKS ================= */
+
+/* Home → About : reduce gap */
+
+.hero {
+    padding-bottom: 45px;
+}
+
+.about {
+    padding-top: 25px;
+}
+
+
+/* Selected Work → Let's Connect : add more gap */
+
+.projects-section {
+    padding-bottom: 40px;
+}
+
+.contact-section {
+    padding-top: 0px;
+}
+
+
+/* ================= SYMPOSIUM IMAGES ================= */
+
+.symposium-scroll {
+    gap: 20px;
+}
+
+.symposium-card {
+    min-width: 300px;
+    flex: 0 0 300px;
+}
+
+.symposium-card img {
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+}
+
+
+/* ================= MERIT IMAGES ================= */
+
+.merit-scroll {
+    gap: 16px;
+}
+
+.merit-card {
+    min-width: 220px;
+    flex: 0 0 220px;
+}
+
+.merit-card img {
+    width: 220px;
+    height: 170px;
+    object-fit: cover;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding-bottom: 25px;
+    }
+
+    .about {
+        padding-top: 25px;
+    }
+
+    .projects-section {
+        padding-bottom: 55px;
+    }
+
+    .contact-section {
+        padding-top:55px;
+    }
+
+    .achievement-proofs {
+        gap: 14px;
+    }
+
+    .symposium-scroll,
+    .merit-scroll {
+        gap: 12px;
+    }
+
+    .symposium-card,
+    .merit-card {
+        min-width: 180px;
+        flex-basis: 180px;
+    }
+
+    .symposium-card img,
+    .merit-card img {
+        width: 180px;
+        height: 200px;
+    }
+}
+
+/* ================= ADOBE PHOTOSHOP ================= */
+
+.photoshop-section {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.photoshop-section .section-title {
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 35px;
+}
+
+.photoshop-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 5px 25px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+.photoshop-card {
+    flex: 0 0 280px;
+    min-width: 280px;
+    overflow: hidden;
+}
+
+.photoshop-card a {
+    display: block;
+    text-decoration: none;
+}
+
+.photoshop-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photoshop-card img:hover {
+    transform: scale(1.03);
+}
+
+.photoshop-card h3 {
+    margin: 14px 0 5px;
+    font-size: 16px;
+}
+
+.photoshop-card p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .photoshop-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .photoshop-card {
+        flex: 0 0 240px;
+        min-width: 240px;
+    }
+
+    .photoshop-card img {
+        height: 200px;
+    }
+
+}
+/* ================= HERO TEXT ================= */
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroTextAppear 1.5s ease-out 0.2s forwards;
+}
+
+@keyframes heroTextAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= PROFILE IMAGE ================= */
+
+.profile-image {
+    width: 400px;
+    height: 550px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transform: translateY(80px) scale(0.85);
+
+    animation:
+        imageAppear 1.4s ease-out 1.1s forwards,
+        imageBreathing 5s ease-in-out 2.5s infinite;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ================= IMAGE APPEAR ================= */
+
+@keyframes imageAppear {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.94);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ================= AUTOMATIC IMAGE SIZE ================= */
+
+@keyframes imageBreathing {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+/* =====================================================
+   FINAL COMMON LEFT ALIGNMENT
+   ===================================================== */
+
+/* All main sections - same left and right spacing */
+.about,
+.skills-section,
+.projects-section,
+.contact-section,
+.certificates-section,
+.achievements-section,ments
+.internships-section,
+.symposium-section,
+.merit-section,
+.photoshop-section {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
+/* All section headings - same left position */
+.section-title {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+/* Remove centered max-width from inner content */
+.about-content,
+.skills-grid,
+.internships-grid {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* Horizontal content starts exactly from left */
+.projects-grid,
+.certificates-grid,
+.achievements-grid,
+.symposium-scroll,
+.merit-scroll,
+.photoshop-scroll {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* Remove extra left padding inside horizontal rows */
+.projects-grid,
+.certificates-grid,
+.achievements-grid,
+.symposium-scroll,
+.merit-scroll,
+.photoshop-scroll {
+    padding-left: 0;
+}
+
+
+/* Contact content starts from same left line */
+.contact-content {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .about,
+    .skills-section,
+    .projects-section,
+    .contact-section,
+    .certificates-section,
+    .achievements-section,
+    .internships-section,
+    .symposium-section,
+    .merit-section,
+    .photoshop-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+}
+/* ================= ACHIEVEMENT PROOFS ALIGNMENT ================= */
+
+.achievement-proofs {
+    display: flex;
+    gap: 20px;
+
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 15px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.achievement-proof {
+    flex: 0 0 180px;
+    min-width: 180px;
+    margin-left: 0;
+}
+
+.achievement-proof:first-child {
+    margin-left: 0;
+}
+
+.achievement-proof img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+ /* ================= CERTIFICATES HEADING POSITION ================= */
+
+.certificates-section {
+    padding-top: 80px;
+}
+
+.certificates-section .section-title {
+    margin-bottom: 60px;
+}
+/* ================= ACHIEVEMENT PROOFS ALIGNMENT ================= */
+
+.achievement-proofs {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    /* Same left alignment as other sections */
+    margin-left: 60px;
+    margin-right: 60px;
+
+    padding: 10px 0 20px;
+
+    scroll-behavior: smooth;
+}
+
+/* Keep proof cards aligned properly */
+.achievement-proof {
+    flex: 0 0 180px;
+    min-width: 200px;
+}
+
+.achievement-proof img {
+    width: 200px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .achievement-proofs {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .achievement-proof {
+        flex: 0 0 160px;
+        min-width: 160px;
+    }
+
+    .achievement-proof img {
+        width: 160px;
+        height: 200px;
+    }
+}
+/* ================= MY SKILLS - COMPACT BUT FULL CONTENT ================= */
+
+.skill-card {
+    min-height: 0;
+    height: auto;
+    padding: 28px;
+}
+
+/* Skill number */
+.skill-card .skill-number {
+    margin-bottom: 10px;
+}
+
+/* Heading */
+.skill-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+/* Description */
+.skill-card p {
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+/* Small skill boxes */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0;
+}
+
+.skill-tags span {
+    display: inline-block;
+    padding: 5px 10px;
+    line-height: 1.2;
+    height: auto;
+}
+/* ================= MY SKILLS SPACING ================= */
+
+.skill-card {
+    height: auto;
+    min-height: 0;
+    padding: 28px;
+}
+
+/* Number to heading */
+.skill-card .skill-number {
+    margin-bottom: 16px;
+}
+
+/* Heading to description */
+.skill-card h3 {
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+/* Description to small boxes */
+.skill-card p {
+    margin-top: 0;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+/* Small skill boxes */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0;
+}
+
+.skill-tags span {
+    padding: 6px 12px;
+    line-height: 1.3;
+}
+/* ================= SKILLS DESCRIPTION - SINGLE LINE ================= */
+
+.skill-card p {
+    width: 100%;
+    white-space: nowrap;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+@media (max-width: 700px) {
+    .skill-card p {
+        white-space: normal;
+    }
+}
+.hero-visual {
+    transform: translateX(-40px);
+}
